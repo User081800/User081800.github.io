@@ -38,10 +38,12 @@
             border-radius: 10px;
             border: 3px solid black;
         }
+        
         .ojos2{
             height:90%;
             width: 70%;
         }
+
         .article {
             background-color: rgb(255, 140, 211);
             border-radius: 15px;
@@ -68,17 +70,6 @@
             text-decoration: none;
         }
 
-        button {
-            color: white;
-            background-color: rgb(248, 9, 196);
-            height: 40px;  
-            width: 90px;
-            font-size: 90%;
-            font-family: 'Gill Sans', 'Gill Sans MT';
-            border: none;
-            cursor: pointer;
-        }
-
         aside {
             background-color:rgb(255, 140, 211);
             color: rgb(0, 0, 0);
@@ -92,7 +83,7 @@
             margin-left: 20px;
         }
 
-            button{
+            .button-doble{
                 color: pink;
                 background-color:fuchsia;
                 height:60px;
@@ -101,7 +92,6 @@
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
 
-            
             strong{
                 font-size: 135%;
                 text-align: center;
@@ -162,10 +152,10 @@
             <p> <strong> Estos botones dicen la verdad </strong> </p>
             <p>Los botones no dejaran tocarse si estas mientiendo, no les mientas porque ellos saben cuando lo haces</p>
             <img src="" alt="">
-            <button id="yess">Tienes un lindo cuerpo</button>
+            <button class="button-doble" id="yess">Tienes un lindo cuerpo</button>
             <br>
             <br>
-            <button id="noo">No tienes un lindo cuerpo</button>
+            <button class="button-doble" id="noo">No tienes un lindo cuerpo</button>
 
             
         </aside>
@@ -175,24 +165,41 @@
         </footer>
 
 
-<script>
-    const vutonSi = document.getElementById('yess');
-    const vutonNo = document.getElementById('noo');
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script>
+                const vutonSi = document.getElementById('yess');
+                const vutonNo = document.getElementById('noo');
 
-    const positIive = () => {
-        alert('🎉Felicidades tienes un maravilloso cuerpo🎉');
-        alert('Hemos confirmado con las fotos lo hermosa que luces con cualquier cosa');
-        alert('Y...  Wilmer te manda a decir que te quiere un monton')
-        location.href = 'https://youtu.be/WSNk0LyTptU?si=8jNHBN1m9AzWUol_';
-    }
+                const positIive = async () => {
+                    await Swal.fire({
+                        title: '✅ Confirmado ✅',
+                        html: `Felicidades, tienes un cuerpo maravilloso 🌟<br><br>
+                            Hemos confirmado con las fotos lo hermosa que luces con cualquier cosa.<br><br>
+                            <em>Y... Wilmer te manda a decir que te quiere un montón y quiere que escuches algo</em>`,
+                        icon: 'success',
+                        confirmButtonText: 'Escuchar',
+                        background: '#ffe0f0',
+                        color: '#660033',
+                        confirmButtonColor: '#e91e63',
+                        showClass: {
+                            popup: 'animate__animated animate__zoomIn'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__zoomOut'
+                        }
+                    });
 
-    const evitarQLDno = () =>{
-        vutonNo.style.position = 'absolute';
-        vutonNo.style.top = (Math.random() * window.innerHeight) + 'px';
-        vutonNo.style.left = (Math.random() * window.innerHeight) + 'px';
-    }
-    vutonSi.addEventListener('click', positIive);
-    vutonNo.addEventListener('mouseover', evitarQLDno);
-</script>
+                    location.href = 'https://youtu.be/WSNk0LyTptU?si=8jNHBN1m9AzWUol_';
+                }
+
+                const evitarQLDno = () => {
+                    vutonNo.style.position = 'absolute';
+                    vutonNo.style.top = (Math.random() * window.innerHeight) + 'px';
+                    vutonNo.style.left = (Math.random() * window.innerWidth) + 'px';
+                }
+
+                vutonSi.addEventListener('click', positIive);
+                vutonNo.addEventListener('mouseover', evitarQLDno);
+        </script>
 </body>
 </html>
