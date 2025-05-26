@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te Adoro Daily 🧁 </title>
         <link rel="icon" type="image/png" href="icono.jpg">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         a {
             font-size: 250%;
@@ -163,48 +165,57 @@
     </footer>
 
     <script>
-        const vutonSi = document.getElementById('yess');
+    const vutonSi = document.getElementById('yess');
 
-        const positIive = () => {
-            alert('Besito por ser tan hermosa fisica y emocionalmente');
-            alert('Besito por todas las veces que logras alcanzar los objetivos que te colocas ');
-            alert('Besito por lo mucho que has logrado hasta hoy');
-            alert('Besito porque apesar de mucho no te das por vencida(˶^ з^(〃‿〃✿)');
-            alert('Besito por lo fuerte que eres, wapa');
-            alert('Besito por tener unos labios muy hermosos (˶^ з^(〃‿〃✿)');
-            alert('Besito por ser la chica con la mirada más encantadora de esta tierra (˶^ з^(〃‿〃✿)');
-            alert('Besito por ser la chica con el cabello mas hermoso (˶^ з^(〃‿〃✿)');
-            alert('Besito por superar los retos que se te presentan cada día y salir fortalecida');
-            alert('Besito por siempre tener una actitud positiva');
-            alert('Besito por todas la veces que te lastimaron y hoy en día pudiste superar ese mal trato (˶^ з^(〃‿〃✿)');
-            alert('Besito por robarle todo el brillo al sol(˶^ з^(〃‿〃✿)');
-            alert('Besito porque tienes un cuerpo demasiado hermoso');
-            alert('Besito por ser una persona tan talentosa, inteligente y creativa');
-            alert('Besito por las veces que te sientes orgullosa de ti misma (˶^ з^(〃‿〃✿)');
-            alert('Besito por tener los ojos más billantes y hermosos de este pvto planeta');
-            alert('Besito porque eres una persona muy compresiva (˶^ з^(〃‿〃✿)');
-            alert('Besito por la dulzura que transmites con cada palabra (˶^ з^(〃‿〃✿)');
-            alert('Besito porque cuando tú eres feliz trasmites tanta luz para iluminar todo un día');
-            alert('Besito porque cada vez que hablo contigo, mi día se vuelve mejor');
-            alert('Besito porque mereces que te llenen de cariño y amor cada segundo');
-            alert('Besito por la forma en que haces que todo a tu alrededor sea más especial (˶^ з^(〃‿〃✿)');
-            alert('Besito porque me encanta la forma en que expresas tus sentimientos');
-            alert('Besito porque tu ternura no tiene comparación (˶^ з^(〃‿〃✿)');
-            alert('Besito por todas las veces que te esfuerzas aunque algunos no lo note');
-            alert('Besito porque cuando eres feliz, el mundo se detiene por un instante');
-            alert('Besito porque eres completamente un encanto (˶^ з^(〃‿〃✿)');
-            alert('Besito por cada latido de tu corazón lleno de nobleza');
-            alert('Besito porque simplemente existes y eso ya es motivo suficiente');
-            alert('Besito porque eres más hermosa de lo que alguna vez podrías imaginar');
-            alert('Te mereces todo este mundo ponquesito y si yo no puedo dartelo sé que habrá alguien que si lo hará y yo seré feliz');
-            alert('TAMBIEN QUIERO QUE RECUERDES LO MUCHO QUE ERES Y QUE MERECES MUCHISIMO MÁS DE LO QUE TÚ ERES');
-            alert('SI ALGUNA VEZ TE SIENTES INSEGURA PUEDES ECHARLE UN VISTAZO A ESTA PAGINA Y RECODAR QUE ESTO LO HICE PORQUE ERES UNA CHICA DEMASIADO PRECIOSA, MARAVILLOSA, AMABLE, RAZONABLE E INTELIGENTE');
-            alert('TE QUIERO DEMASIADO DAILY, NUNCA OLVIDES ESO');
-                 location.href = 'https://youtu.be/wLYk_qRjP6c';
+    const mostrarMensajes = async () => {
+        const mensajes = [
+            'Besito por ser tan hermosa física y emocionalmente',
+            'Besito por todas las veces que logras alcanzar los objetivos que te colocas',
+            'Besito por lo mucho que has logrado hasta hoy',
+            'Besito porque a pesar de mucho no  te  das  por  vencida(˶^ з^(〃‿〃✿)',
+            'Besito por lo fuerte que eres, wapa',
+            'Besito por tener unos labios muy hermosos (˶^ з^(〃‿〃✿)',
+            'Besito por ser la chica con la mirada más encantadora de esta tierra',
+            'Besito por ser la chica con el cabello más hermoso',
+            'Besito por superar los retos que se te presentan cada día y salir fortalecida',
+            'Besito por siempre tener una actitud positiva',
+            'Besito por todas las veces que te lastimaron y hoy en día pudiste superar ese mal trato',
+            'Besito por robarle todo el brillo al sol',
+            'Besito porque tienes un cuerpo demasiado hermoso',
+            'Besito por ser una persona tan talentosa, inteligente y creativa',
+            'Besito por las veces que te sientes orgullosa de ti misma',
+            'Besito por tener los ojos más brillantes y hermosos de este planeta',
+            'Besito porque eres una persona muy comprensiva',
+            'Besito por la dulzura que transmites con cada palabra',
+            'Besito porque cuando tú eres feliz transmites tanta luz para iluminar todo un día',
+            'Besito porque cada vez que hablo contigo, mi día se vuelve mejor',
+            'Besito porque mereces que te llenen de cariño y amor cada segundo',
+            'Besito por la forma en que haces que todo a tu alrededor sea más especial',
+            'Besito porque me encanta la forma en que expresas tus sentimientos',
+            'Besito porque tu ternura no tiene comparación',
+            'Besito por todas las veces que te esfuerzas aunque algunos no lo noten',
+            'Besito porque cuando eres feliz, el mundo se detiene por un instante',
+            'Besito porque eres completamente un encanto',
+            'Besito por cada latido de tu corazón lleno de nobleza',
+            'Besito porque simplemente existes y eso ya es motivo suficiente',
+            'Besito porque eres más hermosa de lo que alguna vez podrías imaginar',
+            'Te mereces todo este mundo, ponque-si to 💖',
+            'TAMBIÉN QUIERO QUE RECUERDES LO MUCHO QUE ERES Y QUE MERECES MUCHÍSIMO MÁS DE LO QUE TÚ CREES',
+            'SI ALGUNA VEZ TE SIENTES INSEGURA, MIRA ESTA PÁGINA Y RECUERDA QUE LA HICE PARA TI, PORQUE ERES DEMASIADO PRECIOSA',
+            'TE QUIERO DEMASIADO DAILY, NUNCA OLVIDES ESO 💗'
+        ];
+
+        for (let mensaje of mensajes) {
+            await Swal.fire({
+                text: mensaje,
+                confirmButtonText: '💋'
+            });
         }
-        
-        vutonSi.addEventListener('click', positIive);
 
-    </script>
+        window.location.href = 'https://youtu.be/wLYk_qRjP6c';
+    };
+
+    vutonSi.addEventListener('click', mostrarMensajes);
+</script>
 </body>
 </html>
