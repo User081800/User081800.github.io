@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Te Adoro Daily 🧁 </title>
-        <link rel="icon" type="image/png" href="icono.jpg">
+    <link rel="icon" type="image/png" href="icono.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-size: 16px;
@@ -158,19 +159,34 @@
             <button id="yess">Tocar</button>
         </aside>
     </div>
-    <footer>
-        <a href="index.html" class="atras">Atrás</a>
-    </footer>
-    <script>
+
+     <script>
         const botonSi = document.getElementById('yess');
 
-        const positivo = () => {
-            alert('"La Luna sale a caminar siguiendo tus pupilas, la noche brilla original después que tú la miras" Tus ojos son tan hermosos y siempre me hacen recordar...');
+        const positivo = async () => {
+            await Swal.fire({
+                html: `"La Luna sale a caminar siguiendo tus pupilas, la noche brilla original después que tú la miras" 🌙<br><br><em>Tus ojos son tan hermosos y siempre me hacen recordar...</em>`,
+                confirmButtonText: 'Escuchar',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                },
+                background: '#ffe0f0',
+                color: '#660033',
+                confirmButtonColor: '#e91e63'
+            });
 
             location.href = 'https://youtu.be/pYe_cYAXcxA';
         }
 
         botonSi.addEventListener('click', positivo);
     </script>
+
+    
+    <footer>
+        <a href="index.html" class="atras">Atrás</a>
+    </footer>
 </body>
 </html>
