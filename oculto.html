@@ -109,6 +109,26 @@
             border-radius: 0px 0px 15px 15px;
             clear: both;
         }
+
+        .boton-footer {
+            color: white;
+            background-color: rgb(233, 33, 173);
+            height: 50px;
+            width: 110px;
+            font-size: 90%;
+            font-family: 'Gill Sans', 'Gill Sans MT';
+            border: none;
+            cursor: pointer;
+            margin-left: 7px;
+            margin-right: 7px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-footer:hover {
+            background-color: rgb(185, 0, 185);
+        }
         
 
         
@@ -150,9 +170,9 @@
         </section>
     </div>
     <footer>
-        <a href="su_ser.html" class="atras">Atrás</a>
-        <a href="index.html" class="atras">Inicio</a>
-        <a href="elamor.html" class="atras">El amor es raro</a>
+        <button class="boton-footer" onclick="location.href='su_ser.html'">Atrás</button>
+        <button class="boton-footer"  onclick="location.href='index.html'">Inicio</button>
+        <button class="boton-footer"  onclick="location.href='elamor.html'">El amor</button>
     </footer>
 </body>
 </html>
