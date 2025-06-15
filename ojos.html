@@ -77,6 +77,26 @@
            
         }
 
+        .boton-footer {
+            color: white;
+            background-color: rgb(233, 33, 173);
+            height: 50px;
+            width: 110px;
+            font-size: 90%;
+            font-family: 'Gill Sans', 'Gill Sans MT';
+            border: none;
+            cursor: pointer;
+            margin-left: 35px;
+            margin-right: 35px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-footer:hover {
+            background-color: rgb(185, 0, 185);
+        }
+
         button {
             color: white;
             background-color: rgb(233, 33, 173);
@@ -194,7 +214,8 @@
 
     
     <footer>
-        <a href="index.html" class="atras">Atrás</a>
+        <button class="boton-footer" onclick="location.href='index.html'">Atrás</button>
+        <button class="boton-footer"  onclick="location.href='cabello.html'">Siguiente</button>
     </footer>
 </body>
 </html>
