@@ -77,15 +77,24 @@
            
         }
 
-        button {
+       .boton-footer {
             color: white;
             background-color: rgb(233, 33, 173);
-            height: 40px;
-            width: 90px;
+            height: 50px;
+            width: 110px;
             font-size: 90%;
             font-family: 'Gill Sans', 'Gill Sans MT';
             border: none;
             cursor: pointer;
+            margin-left: 7px;
+            margin-right: 7px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-footer:hover {
+            background-color: rgb(185, 0, 185);
         }
 
         aside {
@@ -147,9 +156,9 @@
         </section>
     </div>
     <footer>
-        <a href="oculto.html" class="atras">Atrás</a>
-        <a href="recordatorio.html" class="atras">Recordatorio</a>
-        <a href="index.html" class="atras">Inicio</a>
+        <button class="boton-footer" onclick="location.href='oculto.html'">Atrás</button>
+        <button class="boton-footer"  onclick="location.href='recordatorio.html'">Recordatorio</button>
+        <button class="boton-footer"  onclick="location.href='index.html'">Inicio</button>ref="index.html" class="atras">Inicio</a>
     </footer>
 </body>
 </html>
